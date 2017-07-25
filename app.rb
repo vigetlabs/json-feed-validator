@@ -12,6 +12,10 @@ post "/validate" do
 
   begin
     @errors = JSON::Validator.fully_validate(schema, @data)
+
+    if @errors.none?
+      @data = JSON.pretty_generate(JSON.parse(@data))
+    end
   rescue => ex
     @errors = [ex.message]
   end
