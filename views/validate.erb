@@ -1,0 +1,21 @@
+<% if @errors.none? %>
+  <p>This is a valid feed.</p>
+<% else %>
+  <p>Errors:</p>
+
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/validate" method="post">
+  <p>
+    <textarea name="data" rows="20" cols="100"><%= @data %></textarea>
+  </p>
+
+  <p>
+    <button type="submit">Validate</button>
+  </p>
+</form>
