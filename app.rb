@@ -11,11 +11,12 @@ post "/validate" do
   @data = params[:data]
 
   begin
-    @errors = JSON::Validator.fully_validate(schema, @data)
+    JSON.parse(@data)
 
-    if @errors.none?
-      @data = JSON.pretty_generate(JSON.parse(@data))
-    end
+    @errors = JSON::Validator.fully_validate(schema, @data)
+    @data = JSON.pretty_generate(JSON.parse(@data))
+  rescue JSON::ParserError
+    @errors = ["Could not parse JSON"]
   rescue => ex
     @errors = [ex.message]
   end
