@@ -7,3 +7,7 @@ gem "json-schema"
 group :development do
   gem "rerun"
 end
+
+group :test do
+  gem "rack-test"
+end
