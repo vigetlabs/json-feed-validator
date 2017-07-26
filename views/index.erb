@@ -5,13 +5,13 @@
     </p>
   <% else %>
     <div class="alert alert-danger">
-      <p>Errors:</p>
+      <p><b>Errors:</b></p>
 
-      <ul>
+      <ol>
         <% @errors.each do |error| %>
-          <li><code><%= CGI.escapeHTML error %></code></li>
+          <li><code><%= format_error_message error %></code></li>
         <% end %>
-      </ul>
+      </ol>
     </div>
   <% end %>
 <% end %>
