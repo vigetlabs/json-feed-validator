@@ -4,7 +4,10 @@ require "json-schema"
 schema = File.read("schema.json")
 
 get "/" do
-  erb :index
+  @data = ""
+  @errors = []
+
+  erb :index, layout: :layout
 end
 
 post "/validate" do
@@ -21,5 +24,5 @@ post "/validate" do
     @errors = [ex.message]
   end
 
-  erb :validate
+  erb :index, layout: :layout
 end

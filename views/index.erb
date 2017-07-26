@@ -1,9 +1,23 @@
-<form action="/validate" method="post">
-  <p>
-    <textarea name="data" rows="20" cols="100"></textarea>
-  </p>
+<% if @data.length > 0 %>
+  <% if @errors.none? %>
+    <p>This is a valid feed.</p>
+  <% else %>
+    <p>Errors:</p>
 
-  <p>
-    <button type="submit">Validate</button>
-  </p>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><code><%= error %></code></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<form action="/validate" method="post">
+  <div class="form-group">
+    <textarea name="data" class="form-control" rows="20"><%= @data %></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn">Validate</button>
+  </div>
 </form>
