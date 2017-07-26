@@ -1,14 +1,18 @@
 <% if @data.length > 0 %>
   <% if @errors.none? %>
-    <p>This is a valid feed.</p>
+    <p class="alert alert-success">
+      This is a valid feed.
+    </p>
   <% else %>
-    <p>Errors:</p>
+    <div class="alert alert-danger">
+      <p>Errors:</p>
 
-    <ul>
-      <% @errors.each do |error| %>
-        <li><code><%= error %></code></li>
-      <% end %>
-    </ul>
+      <ul>
+        <% @errors.each do |error| %>
+          <li><code><%= CGI.escapeHTML error %></code></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 <% end %>
 
