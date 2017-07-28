@@ -1,6 +1,6 @@
 # JSON Feed Validator
 
-> Validate a [JSON Feed][1] against a [JSON Schema][2]. Running at <https://json-feed-validator.herokuapp.com/>.
+Validate a [JSON Feed][1] against a [JSON Schema][2]. Running at <https://json-feed-validator.herokuapp.com/>.
 
 [1]: https://jsonfeed.org/
 [2]: http://json.schemastore.org/feed
