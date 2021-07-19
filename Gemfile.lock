@@ -12,7 +12,7 @@ GEM
       ruby_dep (~> 1.2)
     mustermann (1.0.0)
     public_suffix (2.0.5)
-    rack (2.0.3)
+    rack (2.2.3)
     rack-protection (2.0.0)
       rack
     rack-test (0.7.0)
